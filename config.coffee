@@ -2,7 +2,7 @@ exports.config =
   # See docs at http://brunch.readthedocs.org/en/latest/config.html.
   conventions:
     assets:  /^app\/assets\//
-    ignored: /^(bower_components\/bootstrap-less(-themes)?|app\/styles\/overrides|(.*?\/)?[_]\w*)/
+    ignored: /^(bower_components\/bootstrap-sass-official?|app\/styles\/overrides|(.*?\/)?[_]\w*)/
   modules:
     definition: false
     wrapper: false
@@ -19,7 +19,7 @@ exports.config =
         'css/app.css': /^(app|vendor|bower_components)/
       order:
         before: [
-          'app/styles/app.less'
+          'app/styles/app.scss'
         ]
 
     templates:
@@ -32,6 +32,8 @@ exports.config =
     jade_angular:
       modules_folder: 'partials'
       locals: {}
+    # sass:
+    #   mode: 'ruby'
 
   # Enable or disable minifying of result js / css files.
   # minify: true
