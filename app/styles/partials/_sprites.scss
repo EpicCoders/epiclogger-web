@@ -1,0 +1,44 @@
+$icons: "../app/assets/images/sprites/icons-d21ec59fde41107ab4b05d63c1e04d87493058a0.png";
+  $brush-x: 0px;
+  $brush-y: 0px;
+  $brush-offset-x: 0px;
+  $brush-offset-y: 0px;
+  $brush-width: 30px;
+  $brush-height: 30px;
+  $brush: 0px 0px 0px 0px 30px 30px;
+  $empty-inbox-x: 0px;
+  $empty-inbox-y: 30px;
+  $empty-inbox-offset-x: 0px;
+  $empty-inbox-offset-y: -30px;
+  $empty-inbox-width: 30px;
+  $empty-inbox-height: 30px;
+  $empty-inbox: 0px 30px 0px -30px 30px 30px;
+  $inbox-x: 0px;
+  $inbox-y: 60px;
+  $inbox-offset-x: 0px;
+  $inbox-offset-y: -60px;
+  $inbox-width: 30px;
+  $inbox-height: 30px;
+  $inbox: 0px 60px 0px -60px 30px 30px;
+
+
+  @mixin sprite-width($sprite) {
+    width: nth($sprite, 5);
+  }
+
+  @mixin sprite-height($sprite) {
+    height: nth($sprite, 6);
+  }
+
+  @mixin sprite-position($sprite) {
+    $sprite-offset-x: nth($sprite, 3);
+    $sprite-offset-y: nth($sprite, 4);
+    background-position: $sprite-offset-x  $sprite-offset-y;
+  }
+
+  @mixin sprite($spriteImage, $sprite) {
+    background-image: url(#{$spriteImage});
+    @include sprite-position($sprite);
+    @include sprite-width($sprite);
+    @include sprite-height($sprite);
+  }

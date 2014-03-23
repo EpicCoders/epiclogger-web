@@ -2,7 +2,7 @@ exports.config =
   # See docs at http://brunch.readthedocs.org/en/latest/config.html.
   conventions:
     assets:  /^app\/assets\//
-    ignored: /^(bower_components\/bootstrap-sass-official?|app\/styles\/overrides|app\/styles\/partials|(.*?\/)?[_]\w*)/
+    ignored: /^(bower_components\/bootstrap-sass-official?|app\/assets\/images\/sprites\/icons\/|app\/styles\/overrides|app\/styles\/partials|(.*?\/)?[_]\w*)/
   modules:
     definition: false
     wrapper: false
@@ -26,11 +26,15 @@ exports.config =
         'js/dontUseMe' : /^app/ # dirty hack for Jade compiling.
 
   plugins:
+    sprites:
+      cssFormat: 'scss'
+      destCSS: 'app/styles/partials/_sprites.scss' 
     jade:
       pretty: yes # Adds pretty-indentation whitespaces to output (false by default)
     jade_angular:
       modules_folder: 'partials'
       locals: {}
+
     # sass:
     #   mode: 'ruby'
 
