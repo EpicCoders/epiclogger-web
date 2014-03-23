@@ -1,2 +1,5 @@
-@import "overrides/_variables.scss";
-@import "bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+@import "overrides/_variables";
+@import "bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
+
+// here we import the partials for our website
+@import "partials/_app_styles";

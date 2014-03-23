@@ -26,6 +26,11 @@
         "*"
       ]
     },
+    "fontawesome": {
+      "ignore":[
+        "*"
+      ]
+    },
     "angular-mocks": {
       "main": "README.md"
     }

@@ -1,0 +1,130 @@
+#wrapper {  
+  @include transition( all 0.4s ease 0s);
+  padding-left: 0;
+  .page-content-wrapper{
+    position: relative;
+    -webkit-transform: translate3d(0px, 0, 0);
+    transform: translate3d(0px, 0, 0);
+    @include transition( all 0.4s ease 0s);
+  }
+}
+
+#wrapper.active {
+  position: relative;
+  .page-content-wrapper{  
+    -webkit-transform: translate3d(250px, 0, 0);
+    transform: translate3d(250px, 0, 0);
+  }
+}
+
+  
+#wrapper.active .sidebar-wrapper {
+  left: 250px;
+  width: 250px;
+  @include transition( all 0.4s ease 0s);
+}
+
+.sidebar-wrapper {
+  left: 0;
+  margin-left: -250px;
+  width: 250px;
+  background: #1d1e22;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  @include transition( all 0.4s ease 0s);
+}
+
+.page-content-wrapper {
+  width: 100%;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav li {
+  line-height: 40px;
+  text-indent: 20px;
+}
+
+.sidebar-nav li a {
+  color: #7b7e91;
+  display: block;
+  text-decoration: none;
+}
+
+.sidebar-nav li a:hover {
+  color: #393939;
+  background: rgba(255,255,255,1);
+  text-decoration: none;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  line-height: 60px;
+  font-size: 18px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #7b7e91;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+.content-header{
+  border-bottom: 1px solid #ccc;
+  display: block;
+  padding: 8px 30px;
+  h3{margin-top:0; margin-bottom: 0;}  
+  #menu-toggle { 
+    float: left;
+    position: relative;
+    padding: 6px 10px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }  
+}
+
+
+.inset {
+  padding: 15px;
+}
+
+@media (min-width:$screen-sm) {
+
+  #wrapper {
+    padding-left: 250px;
+  }
+
+  .sidebar-wrapper {
+    left: 250px;
+  }
+  .content-header {
+    display: none;
+  }
+
+  .inset {
+    padding: 20px;
+  }
+
+}
+
+
+

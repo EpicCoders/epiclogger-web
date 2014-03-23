@@ -2,9 +2,9 @@
 
 ### Filters ###
 
-angular.module('app.filters', [])
+App.filters = angular.module('app.filters', [])
 
-.filter('interpolate', [
+App.filters.filter('interpolate', [
   'version',
 
 (version) ->

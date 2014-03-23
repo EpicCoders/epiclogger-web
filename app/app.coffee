@@ -1,10 +1,10 @@
 'use strict'
-
 # Declare app level module which depends on filters, and services
 App = angular.module('app', [
   'ngCookies'
   'rails'
   'ngRoute'
+  'UtilsModule'
   'app.controllers'
   'app.directives'
   'app.filters'
@@ -40,3 +40,10 @@ App.run [
       return
 
 ]
+
+$(document).ready ->
+  $("[data-toggle=offcanvas]").click ->
+    $(".row-offcanvas").toggleClass "active"
+    return
+
+  return

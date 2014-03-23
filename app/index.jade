@@ -22,24 +22,31 @@ html(lang='en', ng-app='app')
     script(src='/js/partials.js')
     script(src='/js/app.js')
   body(ng-controller='AppCtrl')
-    .wrapper
-      .navbar.navbar-static-top
-        .navbar-inner
-          .container
-            button.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
-              span.icon-bar
-              span.icon-bar
-              span.icon-bar
-            a(href='/').brand Angular Brunch Seed
-            .nav-collapse
-              div(ng-include="'/partials/nav.html'")
-      .container.main-content
-        div(ng-view)
-        div Angular Brunch seed app: v<span app-version></span>
-      .push
+    #wrapper
+      .sidebar-wrapper(ng-include="'/partials/nav.html'")
+        
+      .page-content-wrapper
+        .content-header
+          .row 
+            button#menu-toggle
+              i.fa.fa-bars
+            .col-xs-11
+              h3.text-center EpicLogger
 
-    footer.footer
-      .container
-        p
-          small
-            a(href='https://github.com/scotch/angular-brunch-seed') angular-brunch-seed | source
+        
+        .page-content.inset
+          .row
+            .container-fluid.main-content
+              div(ng-view)
+              div Angular Brunch seed app: v<span app-version></span>
+            .push
+
+          footer.footer
+            p
+              small
+                a(href='https://github.com/scotch/angular-brunch-seed') angular-brunch-seed | source
+
+
+
+
+    

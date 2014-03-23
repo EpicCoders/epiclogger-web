@@ -2,7 +2,7 @@ exports.config =
   # See docs at http://brunch.readthedocs.org/en/latest/config.html.
   conventions:
     assets:  /^app\/assets\//
-    ignored: /^(bower_components\/bootstrap-sass-official?|app\/styles\/overrides|(.*?\/)?[_]\w*)/
+    ignored: /^(bower_components\/bootstrap-sass-official?|app\/styles\/overrides|app\/styles\/partials|(.*?\/)?[_]\w*)/
   modules:
     definition: false
     wrapper: false
@@ -13,7 +13,6 @@ exports.config =
       joinTo:
         'js/app.js': /^app/
         'js/vendor.js': /^(bower_components|vendor)/
-
     stylesheets:
       joinTo:
         'css/app.css': /^(app|vendor|bower_components)/

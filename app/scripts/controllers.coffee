@@ -2,14 +2,9 @@
 
 ### Controllers ###
 
-angular.module('app.controllers', [])
+App.controllers = angular.module('app.controllers', [])
 
-.controller('AppCtrl', [
-  '$scope'
-  '$location'
-  '$rootScope'
-
-($scope, $location, $rootScope) ->
+App.controllers.controller('AppCtrl', ['$scope','$location','$rootScope','Utils',($scope, $location, $rootScope,Utils) ->
 
   # Uses the url to determine if the selected
   # menu item should have the class active.
@@ -31,23 +26,43 @@ angular.module('app.controllers', [])
       return 'active'
     else
       return ''
+
+  sidebar = ->
+    $scope.container = $("#wrapper")
+    $scope.reset  = $("html")
+    $scope.reset.bind Utils.eventType(), bodyClickFn
+  
+    $("#menu-toggle").click (e) ->
+      e.stopPropagation()
+      e.preventDefault()
+      $scope.container.toggleClass "active"
+      false
+
+  bodyClickFn = (evt) ->
+    unless $(evt.target).hasClass("sidebar-wrapper")
+      $scope.container.removeClass "active"
+    
+  init = =>
+    sidebar()
+  init()
+
 ])
 
-.controller('MyCtrl1', [
+App.controllers.controller('MyCtrl1', [
   '$scope'
 
 ($scope) ->
   $scope.onePlusOne = 2
 ])
 
-.controller('MyCtrl2', [
+App.controllers.controller('MyCtrl2', [
   '$scope'
 
 ($scope) ->
   $scope
 ])
 
-.controller('TodoCtrl', [
+App.controllers.controller('TodoCtrl', [
   '$scope'
 
 ($scope) ->
